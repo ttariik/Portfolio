@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: inherit; 
+  overflow: auto;
+}
+
+/* fira-code-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/fira-code-v22-latin-regular.woff2") format("woff2");
+
+}
+
+
+/* karla-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/font/karla-v31-latin-regular.woff2') format('woff2'); 
+}
+
+
