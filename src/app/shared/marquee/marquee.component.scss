@@ -1,0 +1,54 @@
+.marquee-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.marquee-loop {
+  font-size: 15px;
+  padding-block: 8px;
+  overflow: hidden;
+  user-select: none;
+  height: 70px;
+  background: #ffffff1f;
+  backdrop-filter: blur(5.300000190734863px);
+  rotate: -3deg;
+  position: relative;
+  bottom: 120px;
+  --gap: 20px;
+  display: flex;
+  gap: var(--gap);
+
+  ul {
+    list-style: none;
+    flex-shrink: 0;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap);
+    animation: scroll 100s linear infinite;
+
+    li {
+      color: #3dcfb6;
+      font-family: "Karla";
+      font-weight: 400;
+      font-size: 32px;
+    }
+  }
+
+  &:hover {
+    ul {
+      animation-play-state: paused;
+    }
+  }
+
+  .location {
+    margin-inline: 4px;
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}

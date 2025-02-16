@@ -1,0 +1,26 @@
+<div class="marquee-container">
+    <div class="marquee-loop">
+      <ul>
+        <li class="stack" *ngFor="let item of items">
+          <span class="remote-work">{{ item.remote }}</span>
+          <app-svg-icon></app-svg-icon>
+          <span class="location">{{ item.location }}</span>
+          <app-svg-icon></app-svg-icon>
+          <span class="front-dev">{{ item.role }}</span>
+          <app-svg-icon></app-svg-icon>
+        </li>
+      </ul>
+  
+      <ul aria-hidden="true">
+        <li class="stack" *ngFor="let item of items">
+          <span class="remote-work">{{ item.remote }}</span>
+          <app-svg-icon></app-svg-icon>
+          <span class="location">{{ item.location }}</span>
+          <app-svg-icon></app-svg-icon>
+          <span class="front-dev">{{ item.role }}</span>
+          <app-svg-icon></app-svg-icon>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

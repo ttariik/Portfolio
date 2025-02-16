@@ -4,15 +4,15 @@ html, body {
   box-sizing: border-box;
   scroll-behavior: smooth;
   width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  height: 900px;
+  overflow-x: hidden; 
   font-family: sans-serif;
   background: url("./assets/svg/home-background.svg") center/cover no-repeat;
 }
 
 * {
   box-sizing: inherit;
-  margin: 0; /* Verhindert zusätzliche Ränder, die für den Balken verantwortlich sein könnten */
+  margin: 0;
 }
 
 

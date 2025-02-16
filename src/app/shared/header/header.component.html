@@ -1,29 +1,17 @@
-<div class="navbar">
-  <div class="navbar-left">
-    <div class="language-toggle">
-      <input
-        id="language-switch"
-        class="language-toggle-input"
-        type="checkbox"
-        (change)="toggleLanguage()"
-        [checked]="currentLanguage === 'EN'"
-      />
-      <label for="language-switch" class="language-toggle__label"></label>
-      <span class="language-toggle__on">{{
-        currentLanguage === "EN" ? "EN" : "DE"
-      }}</span>
-
-      <span class="language-toggle__off">{{
-        currentLanguage === "EN" ? "DE" : "EN"
-      }}</span>
+<section>
+  <nav>
+    <div class="nav-container">
+      <button class="toggle-button">
+        <span class="text text-de">DE</span>
+        <span class="text text-en">EN</span>
+        <div class="toggle-circle"></div>
+      </button>
+      <a href="">About me</a>
+      <a href="">Skills</a>
+      <a href="">Projects</a>
     </div>
-
-    <a class="nav-item" href="#about-me">{{ "About Me" }}</a>
-    <a class="nav-item" href="#skills">{{ "Skill set" }}</a>
-    <a class="nav-item" href="#projects">{{ "Projects" }}</a>
-  </div>
-
-  <a href="#" class="logo-link">
-    <img src="" alt="Logo" class="logo" />
-  </a>
-</div>
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo">
+    </div>
+  </nav>
+</section>
