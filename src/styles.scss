@@ -4,13 +4,32 @@ html, body {
   box-sizing: border-box;
   scroll-behavior: smooth;
   width: 100%;
-  max-width: 1440px;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
   font-family: sans-serif;
+  background: url("./assets/svg/home-background.svg") center/cover no-repeat;
 }
 
 * {
-  box-sizing: inherit; 
-  overflow: auto;
+  box-sizing: inherit;
+  margin: 0; /* Verhindert zusätzliche Ränder, die für den Balken verantwortlich sein könnten */
+}
+
+
+/* karla-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/font/karla-v31-latin-regular.woff2') format('woff2'); 
+}
+
+/* fira-code-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/font/fira-code-v22-latin-regular.woff2') format('woff2');
 }
