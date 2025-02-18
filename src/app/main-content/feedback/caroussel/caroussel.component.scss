@@ -1,0 +1,57 @@
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 80%; /* Breite des Carousels */
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: green;
+  color: white;
+  opacity: 0; /* Zuerst unsichtbar */
+  transform: translateX(100%); /* Position außerhalb des Bildschirms */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  position: absolute; /* Alle Container übereinander, dann durch `translateX` verschieben */
+  width: 30%; /* Setze eine feste Breite für die Container */
+  text-align: center;
+}
+
+.carousel-container.front {
+  opacity: 1;
+  transform: translateX(0); /* Mittel-Container kommt nach vorne */
+  z-index: 10; /* Vordergrund */
+}
+
+.carousel-container.left {
+  opacity: 0.5;
+  transform: translateX(-50%); /* Linker Container */
+  z-index: 5;
+}
+
+.carousel-container.right {
+  opacity: 0.5;
+  transform: translateX(50%); /* Rechter Container */
+  z-index: 5;
+}
+
+button {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 15;
+}

@@ -1,0 +1,17 @@
+<div class="carousel">
+    <button class="prev" (click)="prev()">&#10094;</button>
+
+    <div class="carousel-wrapper">
+        <!-- Hier wird jedes Feedback als Container angezeigt -->
+        <div *ngFor="let container of currentContainers; let i = index" 
+            [class.front]="i === 1" 
+            [class.left]="i === 0" 
+            [class.right]="i === 2" 
+            class="carousel-container green-container">
+            <h3>{{ container.name }}</h3>
+            <p>{{ container.text }}</p>
+        </div>
+    </div>
+    
+    <button class="next" (click)="next()">&#10095;</button>
+</div>

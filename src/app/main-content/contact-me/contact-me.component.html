@@ -1,1 +1,31 @@
-<p>contact-me works!</p>
+<section>
+    <div class="contact-text">
+      <h3>Contact Me</h3>
+      <h2>Let's work together</h2>
+      <h4>Got a problem to solve?</h4>
+      <p>
+        Contact me through this form, I am interested in hearing from you, knowing
+        your ideas and contributing to your projects with my work.
+      </p>
+      <p>Need a Frontend developer? <a href="#">Let's talk!</a></p>
+    </div>
+    <div class="contact-form">
+      <hr />
+      <h2>What's your name?</h2>
+      <input type="text" placeholder="Your name goes here" [(ngModel)]="name" />
+      <hr />
+      <h2>What's your email?</h2>
+      <input type="email" placeholder="your@email.com" [(ngModel)]="email" />
+      <hr />
+      <h2>How can I help you?</h2>
+      <textarea placeholder="Hello Tarik, I am interested in..." [(ngModel)]="message"></textarea>
+      <hr />
+      <input type="checkbox" [(ngModel)]="privacyAccepted" />
+      <p>
+        I've read the
+        <a routerLink="/privacy-policy">privacy policy</a>
+        and agree to the processing of my data as outlined.
+      </p>
+      <button (click)="sendMessage()">Say Hello :)</button>
+    </div>
+  </section>
