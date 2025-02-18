@@ -1,11 +1,12 @@
 <section>
+  <div class="content">
     <div class="contact-text">
       <h3>Contact Me</h3>
       <h2>Let's work together</h2>
       <h4>Got a problem to solve?</h4>
       <p>
-        Contact me through this form, I am interested in hearing from you, knowing
-        your ideas and contributing to your projects with my work.
+        Contact me through this form, I am interested in hearing from you,
+        knowing your ideas and contributing to your projects with my work.
       </p>
       <p>Need a Frontend developer? <a href="#">Let's talk!</a></p>
     </div>
@@ -18,7 +19,10 @@
       <input type="email" placeholder="your@email.com" [(ngModel)]="email" />
       <hr />
       <h2>How can I help you?</h2>
-      <textarea placeholder="Hello Tarik, I am interested in..." [(ngModel)]="message"></textarea>
+      <textarea
+        placeholder="Hello Tarik, I am interested in..."
+        [(ngModel)]="message"
+      ></textarea>
       <hr />
       <input type="checkbox" [(ngModel)]="privacyAccepted" />
       <p>
@@ -28,4 +32,6 @@
       </p>
       <button (click)="sendMessage()">Say Hello :)</button>
     </div>
-  </section>
+  </div>
+  <app-footer></app-footer>
+</section>

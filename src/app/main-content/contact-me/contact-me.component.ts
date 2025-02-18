@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from '../../shared/footer/footer.component';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, FooterComponent],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })

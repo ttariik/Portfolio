@@ -1,89 +1,99 @@
 section {
-    height: 900px;
-    background: url("./../../../assets/svg/skill-set-background.svg") no-repeat center center/cover;
-    color: white;
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0;
+  min-height: 100vh;
+  background: url("./../../../assets/svg/skill-set-background.svg") no-repeat
+    center center/cover;
+  color: white;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+
+  .content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    overflow-x: hidden;
-  
-    .contact-text {
-      width: 50%;
-      padding: 40px;
-  
-      h3 {
-        font-size: 1.5rem;
-        color: #3DCFB6;
-      }
-  
-      h2 {
-        font-size: 3rem;
-        font-weight: bold;
-      }
-  
-      h4 {
-        font-size: 1.5rem;
-        color: #3DCFB6;
-      }
-  
-      p {
-        font-size: 1rem;
-        margin: 10px 0;
-      }
-  
-      a {
-        color: #3DCFB6;
-        font-weight: bold;
-        text-decoration: none;
-      }
+    width: 100%;
+  }
+
+  .contact-text {
+    width: 50%;
+    padding: 40px;
+
+    h3 {
+      font-size: 1.5rem;
+      color: #3dcfb6;
     }
-  
-    .contact-form {
-      width: 45%;
-      padding: 40px;
-      border-radius: 10px;
-  
-      hr {
-        border: none;
-        height: 1px;
-        background: #3DCFB6;
-        margin: 15px 0;
-      }
-  
-      h2 {
-        font-size: 1.3rem;
-        color: #3DCFB6;
-      }
-  
-      p {
-        font-size: 1rem;
-        color: #ccc;
-      }
-  
-      input[type="checkbox"] {
-        margin-right: 10px;
-      }
-  
-      button {
-        margin-top: 20px;
-        background: none;
-        border: 1px solid #3DCFB6;
-        padding: 10px 20px;
-        border-radius: 5px;
-        color: white;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-  
-        &:hover {
-          background: #3DCFB6;
-          color: black;
-        }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      color: #3dcfb6;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+
+    a {
+      color: #3dcfb6;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+
+  .contact-form {
+    width: 45%;
+    padding: 40px;
+    border-radius: 10px;
+
+    hr {
+      border: none;
+      height: 1px;
+      background: #3dcfb6;
+      margin: 15px 0;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #3dcfb6;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      background: none;
+      border: 1px solid #3dcfb6;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: #3dcfb6;
+        color: black;
       }
     }
   }
-  
+}
+
+app-footer {
+  margin-top: auto;
+}
