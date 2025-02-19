@@ -1,71 +1,73 @@
-section {
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: url("./../../../assets/svg/home-background.svg") center/cover no-repeat;
+  padding: 0 1rem;
+}
+
+app-header {
+  width: 100%;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 900px;
-  gap: 1rem;
+  min-height: 90vh; 
+  gap: 2rem;
+  padding-top: clamp(5rem, 10vh, 8rem);
+}
 
+.title-container {
+  text-align: center;
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 5.625rem);
+    font-weight: bold;
+    margin: 1rem;
+    color: #d9d9d9;
+    font-family: "Karla";
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: -5px;
+    color: #d9d9d9;
+    font-weight: 400;
+    font-family: "Fira Code";
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+  button {
+    border: 1px solid #ffffff;
+    background: transparent;
+    height: 50px;
+    padding: 0.75rem 2rem;
+    font-size: clamp(1rem, 1.125vw, 1.5rem);
+    font-weight: 400;
+    color: white;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+app-marquee {
   width: 100%;
-  padding: 0 1rem;
-
-  .container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    position: relative;
-    bottom: 100px;
-  }
-
-  .title {
-    text-align: center;
-
-    h1 {
-      font-size: 5.625rem;
-      font-weight: bold;
-      margin: 1rem;
-      color: #d9d9d9;
-      font-family: "Karla";
-
-      @media (max-width: 1024px) {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-      }
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: -5px;
-      color: #d9d9d9;
-      font-weight: 400;
-      font-family: "Fira Code";
-
-      @media (max-width: 1024px) {
-        font-size: clamp(1.5rem, 3vw, 2rem);
-      }
-    }
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-
-    button {
-      border: 1px solid #ffffff;
-      background: transparent;
-      height: 50px;
-      width: auto;
-      padding: 0.75rem 2rem;
-      font-size: clamp(1rem, 1.125vw, 1.5rem);
-      font-weight: 400;
-      color: white;
-      cursor: pointer;
-      border-radius: 100px;
-      transition: 0.3s ease-in-out;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
-  }
+  max-width: 1440px;
+  padding: 2rem 0;
 }
