@@ -1,17 +1,32 @@
 <section>
   <nav>
     <div class="nav-container">
-      <button class="toggle-button">
-        <span class="text text-de">DE</span>
-        <span class="text text-en">EN</span>
-        <div class="toggle-circle"></div>
-      </button>
-      <a href="">About me</a>
-      <a href="">Skills</a>
-      <a href="">Projects</a>
+      <div class="toggle-button">
+        <input
+          id="language-toggle"
+          class="check-toggle check-toggle-round-flat"
+          type="checkbox"
+        />
+        <label for="language-toggle"></label>
+        <span class="on fira-code">EN</span>
+        <span class="off fira-code">DE</span>
+      </div>
+      <div class="nav-item">
+        <a href="">About me</a>
+        <app-svg-icon iconName="radio-button"></app-svg-icon>
+      </div>
+      <div class="nav-item">
+        <a href="">Skills</a>
+        <app-svg-icon iconName="radio-button"></app-svg-icon>
+      </div>
+      <div class="nav-item">
+        <a href="">Projects</a>
+        <app-svg-icon iconName="radio-button"></app-svg-icon>
+      </div>
     </div>
     <div class="logo">
       <img src="assets/logo.png" alt="Logo">
     </div>
   </nav>
 </section>
+
