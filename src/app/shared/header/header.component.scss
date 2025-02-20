@@ -19,7 +19,6 @@ section {
 
     .nav-container {
       @include flexbox(flex-start, center, 20px);
-      
 
       .nav-item {
         display: flex;

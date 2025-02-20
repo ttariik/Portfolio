@@ -1,3 +1,38 @@
-.radio-button{
+.radio-button {
     margin: 0 30px;
 }
+
+.github-icon {
+    position: relative;
+    left: 511px;
+    top: 350px;
+
+
+}
+
+.linkedin-icon {
+    position: relative;
+    left: 540px;
+    top: 400px;
+
+ 
+}
+
+
+.github-icon, .linkedin-icon {
+    color: #3DCFB6;  // Standardfarbe für das Icon
+  
+    &:hover {
+      color: #FFFFFF;  // Hover-Farbe
+    }
+  }
+
+  .github-icon, .linkedin-icon {
+    color: #3DCFB6;  // Standardfarbe für das Icon
+    transition: color 0.3s ease, background-color 0.3s ease;  // Übergang für beide Eigenschaften
+  
+    &:hover {
+      color: #FFFFFF;  // Hover-Farbe für das Icon
+    }
+  }
+  
