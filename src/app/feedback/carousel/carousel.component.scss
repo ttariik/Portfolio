@@ -1,0 +1,112 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-icon {
+  visibility: visible;
+  position: absolute;
+  left: clamp(-3rem, -2.875rem, -2.5rem);
+  top: clamp(-0.8125rem, -0.75rem, -0.5rem);
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: clamp(25rem, 39.5vw, 39.5rem);
+  height: clamp(12rem, 17.125vw, 17.125rem);
+  padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 2.5vw, 2.5rem);
+  background-color: rgb(39, 83, 75);
+  border: 1px solid rgba(61, 207, 182, 1);
+  border-radius: 2rem;
+
+  > p {
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    line-height: clamp(1.2rem, 1.5vw, 1.5rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  > div {
+    width: 100%;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: clamp(0.9rem, 1.125vw, 1.125rem);
+    line-height: clamp(1.1rem, 1.375vw, 1.375rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+
+    > div {
+      flex: 1;
+      border-bottom: 1px solid rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+.review-card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.review-card.previous,
+.review-card.next {
+  opacity: 0.7;
+  transform: scale(0.8);
+
+  > .quote-icon {
+    visibility: hidden;
+  }
+}
+
+.navigation-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.5rem, 0.75vw, 0.75rem);
+  margin-top: clamp(1rem, 1.25vw, 1.25rem);
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: clamp(1.5rem, 1.75vw, 1.75rem);
+  cursor: pointer;
+}
+
+.indicators {
+  display: flex;
+  gap: clamp(0.3rem, 0.5vw, 0.5rem);
+}
+
+.indicator {
+  width: clamp(0.5rem, 0.625vw, 0.625rem);
+  height: clamp(0.5rem, 0.625vw, 0.625rem);
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background: rgba(61, 207, 182, 1);
+}
+
+.nav-left,
+.nav-right {
+  width: clamp(2rem, 2.5vw, 2.5rem);
+  height: clamp(2rem, 2.5vw, 2.5rem);
+  background-size: clamp(1rem, 1.125vw, 1.125rem) clamp(1rem, 1.125vw, 1.125rem);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.5s ease;
+
+  &:hover {
+    background-size: clamp(1.25rem, 1.5vw, 1.5rem) clamp(1.25rem, 1.5vw, 1.5rem);
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+}

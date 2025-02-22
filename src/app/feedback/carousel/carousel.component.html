@@ -1,0 +1,28 @@
+<div class="slider">
+  <div
+    class="review-card"
+    *ngFor="let feedback of fetchVisibleFeedback(); let i = index"
+    [class.active]="i === 1"
+    [class.previous]="i === 0"
+    [class.next]="i === 2"
+  >
+  <img class="quote-icon" src="./../../../assets/svg/quotes.svg" alt="quotation marks" />
+    <p>{{ feedback.comment }}</p>
+    <div>
+      <div></div>
+      <span>{{ feedback.name }} - {{ feedback.role }}</span>
+    </div>
+  </div>
+</div>
+<div class="navigation-wrapper">
+  <div class="nav-left" (click)="movePrevious()"></div>
+  <div class="indicators">
+    <div
+      *ngFor="let feedback of feedbackList; let i = index"
+      class="indicator"
+      [class.active]="i === currentIndex"
+      (click)="jumpToIndex(i)"
+    ></div>
+  </div>
+  <div class="nav-right" (click)="moveNext()"></div>
+</div>

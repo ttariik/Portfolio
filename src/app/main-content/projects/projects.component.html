@@ -13,18 +13,17 @@
 
     <div class="separator"></div>
 
-    <div class="project">
-      <h4>Join</h4>
-      <div class="languages">
-        <span>HTML</span>
-        <span class="separator-line"></span>
-        <span>CSS</span>
-        <span class="separator-line"></span>
-        <span>JavaScript</span>
-        <span class="separator-line"></span>
-        <span>Firebase</span>
+    
+
+    <div class="projects-container">
+      <div *ngFor="let project of projects" class="project-card">
+        <h3>{{ project.name }}</h3>
+        <p>Technologien:</p>
+        <ng-container *ngComponentOutlet="project.component"></ng-container>
       </div>
     </div>
+    
+    
 
     <div class="separator"></div>
 

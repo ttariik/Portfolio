@@ -6,15 +6,17 @@ import { HeaderComponent } from './shared/header/header.component';
 import { AboutMeComponent } from './main-content/about-me/about-me.component';
 import { SkillSetComponent } from './main-content/skill-set/skill-set.component';
 import { ProjectsComponent } from './main-content/projects/projects.component';
-import { FeedbackComponent } from './main-content/feedback/feedback.component';
-import { CarouselComponent } from './main-content/feedback/caroussel/caroussel.component';
+
 import { ContactMeComponent } from './main-content/contact-me/contact-me.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HomePageComponent, HeaderComponent, AboutMeComponent, SkillSetComponent, ProjectsComponent, FeedbackComponent,CarouselComponent, ContactMeComponent],
+  imports: [CommonModule, RouterOutlet, HomePageComponent, HeaderComponent, AboutMeComponent, SkillSetComponent, ProjectsComponent, ContactMeComponent, FeedbackComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

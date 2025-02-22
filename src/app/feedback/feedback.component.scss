@@ -1,0 +1,54 @@
+section {
+  height: auto;
+  min-height: 700px;
+  background: url("./../../assets/svg/skill-set-background.svg") no-repeat center center/cover;
+  color: white;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.reviews-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(28, 28, 28, 1);
+  padding-top: 128px;
+  overflow-x: hidden;
+
+  > img {
+      position: absolute;
+      top: 186px;
+  }
+}
+
+.gradient-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 216px;
+  left: 0;
+  right: 0;
+  height: 378px;
+  background-image: linear-gradient(
+      to right,
+      rgba(28, 28, 28, 1),
+      rgba(28, 28, 28, 0) 25%,
+      rgba(28, 28, 28, 0) 75%,
+      rgba(28, 28, 28, 1)
+  );
+}
+
+.code-style {
+  color: rgba(61, 207, 182, 1);
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 48px;
+}

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarousselComponent } from './caroussel.component';
+import { JoinComponent } from './join.component';
 
-describe('CarousselComponent', () => {
-  let component: CarousselComponent;
-  let fixture: ComponentFixture<CarousselComponent>;
+describe('JoinComponent', () => {
+  let component: JoinComponent;
+  let fixture: ComponentFixture<JoinComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CarousselComponent]
+      imports: [JoinComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CarousselComponent);
+    fixture = TestBed.createComponent(JoinComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

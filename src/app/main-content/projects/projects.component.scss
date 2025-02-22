@@ -13,6 +13,8 @@ section {
     justify-content: center;
     flex-direction: column;
     gap: 0;
+    height: 90vh;
+    padding-left: 5rem;
   }
 
   .project {
@@ -39,6 +41,7 @@ section {
     font-family: "Karla";
     line-height: 30px;
     color: #3dcfb6;
+    margin: 0 0 3rem 0;
   }
 
   h2 {
@@ -47,6 +50,7 @@ section {
     font-family: "Fira Code";
     line-height: 30px;
     color: #3dcfb6;
+    margin: 0 0 3rem 0;
   }
 }
 
@@ -72,6 +76,7 @@ section {
   font-family: "Karla";
   color: #ffffff;
   line-height: 22px;
+  margin: 0 0 1rem 0;
 }
 
 .separator {
@@ -110,4 +115,19 @@ h4 {
   width: 2px;
   height: 14px;
   background-color: #fff;
+}
+
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project-card {
+  background: #222;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px;
 }
