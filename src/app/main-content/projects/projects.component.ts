@@ -11,4 +11,5 @@ import { PROJECTS } from './projects.data';
 })
 export class ProjectsComponent {
   projects: any[] = PROJECTS; 
+  
 }

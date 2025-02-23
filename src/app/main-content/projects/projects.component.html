@@ -1,5 +1,5 @@
 <section>
-  <div class="projects">
+  <!-- <div class="projects">
     <div class="title">
       <h3>Portfolio</h3>
       <h2>Featured Projects</h2>
@@ -9,35 +9,85 @@
       doloribus itaque, suscipit sint porro nihil magnam temporibus sunt
       dignissimos dolorem quidem natus, cupiditate, quia nesciunt? Labore odio
       consequuntur ipsum odit.
-    </p>
+    </p> -->
 
-    <div class="separator"></div>
+  
 
     
 
-    <div class="projects-container">
-      <div *ngFor="let project of projects" class="project-card">
-        <h3>{{ project.name }}</h3>
-        <p>Technologien:</p>
-        <ng-container *ngComponentOutlet="project.component"></ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+ 
+
+    <div class="projects">
+ <div class="separator"></div>
+    <div *ngIf="projects.length > 0">
+      <div class="project-container-join">
+        <header class="project-header-join">
+          <h3 class="project-join">{{ projects[0].name }}</h3>
+          <div>
+            <p *ngFor="let tech of projects[0].technologies">{{ tech }}</p>
+          </div>
+        </header>
+        <ng-container *ngComponentOutlet="projects[0].component"></ng-container>
       </div>
+      <div class="separator"> </div>
+
+
+      <!-- <div class="project-container">
+        <header class="project-header">
+          <h3 class="project-name">{{ projects[1].name }}</h3>
+          <div>
+            <p *ngFor="let tech of projects[1].technologies">{{ tech }}</p>
+          </div>
+        </header>
+        <ng-container *ngComponentOutlet="projects[1].component"></ng-container>
+      </div> -->
     </div>
     
-    
-
-    <div class="separator"></div>
-
-    <div class="project">
-      <h4>El Pollo Loco</h4>
-      <div class="languages">
-        <span>Html</span>
-        <span class="separator-line"></span>
-        <span>CSS</span>
-        <span class="separator-line"></span>
-        <span>JavaScript</span>
-      </div>
-    </div>
-
-    <div class="separator"></div>
   </div>
+
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+  
+    
+    
+    
+  <!-- </div> -->
 </section>

@@ -1,0 +1,30 @@
+.technologiess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    bottom: 25px;
+    font-family: "Karla";
+    font-size: 20px;
+    line-height: 21.6px;
+    letter-spacing: 0%;
+  }
+  
+  .technologiess span {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .technologiess span:hover {
+    transform: scale(1.1);
+    color: black; 
+  }
+  
+  .separator {
+    color: #3dcfb6;
+    margin: 0 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: none; 
+  }
+  

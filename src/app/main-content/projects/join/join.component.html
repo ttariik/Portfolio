@@ -1,4 +1,5 @@
-<ul>
-    <li *ngFor="let tech of technologies">{{ tech }}</li>
-  </ul>
-  
+<p class="join-technologies">
+  <span *ngFor="let tech of ['HTML', '|', 'CSS', '|', 'JavaScript', '|' ,'Firebase']; let last = last">
+    {{ tech }}<span *ngIf="!last" class="separator">  </span>
+  </span>
+</p>

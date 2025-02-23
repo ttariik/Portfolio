@@ -1,1 +1,6 @@
-<p>el-pollo-loco works!</p>
+<p class="technologiess">
+    <span *ngFor="let tech of ['HTML', '|', 'CSS', '|', 'JavaScript']; let last = last">
+      {{ tech }}<span *ngIf="!last" class="separator">  </span>
+    </span>
+  </p>
+  

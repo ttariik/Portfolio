@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-join',
@@ -7,8 +7,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   imports: [CommonModule],
   templateUrl: './join.component.html',
   styleUrl: './join.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
-export class JoinComponent {
-  technologies = ['HTML', 'CSS', 'JavaScript', 'Firebase'];
-}
+export class JoinComponent {}
