@@ -14,35 +14,48 @@
 
 .join-technologies span:hover {
   transform: scale(1.1);
-  color: #3dcfb6; 
+  color: #3dcfb6;
 }
 
-
 .project-container-join {
+  cursor: pointer;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 50px;
   position: relative;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
     background-color: rgba(61, 207, 182, 0.25);
 
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 90px;
+      left: 980px;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 300px;
+      background: url("./../../../../assets/svg/join-project.svg") no-repeat center center;
+      background-size: contain;
+    }
   }
 
-
   &:hover h3::after {
-    content: '';
+    content: "";
     position: absolute;
-    top: 53px;
+    top: 60px;
     left: 120px;
     transform: translateY(-50%);
-    width: 13px; // SVG-Größe anpassen
+    width: 13px;
     height: 13px;
-    background: url('./../../../../assets/svg/arrow-outward.svg') no-repeat center center;
-    background-size: contain; 
+    background: url("./../../../../assets/svg/arrow-outward.svg") no-repeat
+      center center;
+    background-size: contain;
   }
 }

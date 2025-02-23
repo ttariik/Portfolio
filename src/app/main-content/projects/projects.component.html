@@ -35,22 +35,26 @@
   
 
 
-
  
 
-    <div class="projects">
+    <div class="projects" style="margin-top: 300px;"> 
  <div class="separator"></div>
     <div *ngIf="projects.length > 0">
-      <div class="project-container-join">
+      <div class="project-container-join" (click)="openModal(projects[0])">  
         <header class="project-header-join">
           <h3 class="project-join">{{ projects[0].name }}</h3>
           <div>
             <p *ngFor="let tech of projects[0].technologies">{{ tech }}</p>
           </div>
+          <app-modal *ngIf="selectedProject" [project]="selectedProject" (closeModal)="closeModal()"></app-modal>
+
         </header>
         <ng-container *ngComponentOutlet="projects[0].component"></ng-container>
       </div>
-      <div class="separator"> </div>
+      <div class="separator"></div>
+
+      <app-modal  *ngIf="selectedProject" [project]="selectedProject" (closeModal)="closeModal()" ></app-modal>
+
 
 
       <!-- <div class="project-container">
