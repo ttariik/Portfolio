@@ -1,18 +1,31 @@
 <div class="modal-overlay" (click)="onOverlayClick($event)">
   <div class="modal-content" (click)="stopPropagation($event)">
-    <h3>{{ projectIndex + 1 | number: '2.0' }}</h3>
-    <h2 class="project-name">{{ project.name }}</h2>
-    <div *ngFor="let project of joinDescription">
-      <h2 class="title">{{ project.title }}</h2>
-      <p class="description">{{ project.description }}</p>
+    <div class="modal-left">
+      <h3>{{ projectIndex + 1 | number : "2.0" }}</h3>
+      <h2 class="project-name">{{ project.name }}</h2>
+      <div *ngFor="let project of joinDescription">
+        <h2 class="title">{{ project.title }}</h2>
+        <p class="description">{{ project.description }}</p>
+      </div>
+      <div class="additional-content">
+        <div *ngFor="let icon of joinIcons" class="icon-container">
+          <app-svg-icon [iconName]="icon.name"></app-svg-icon>
+          <span class="icon-label">{{ icon.label }}</span>
+        </div>
+        <div class="project-actions">
+          <button class="github-button">GitHub</button>
+          <button class="live-test-button">Live Test</button>
+        </div>
+      </div>
     </div>
-    <div *ngFor="let tech of project.technologies" class="tech-stack">{{ tech }}</div>
 
-    <div class="additional-content">
-      <img *ngFor="let image of project.images" [src]="image" alt="Project Image" />
-      <button *ngFor="let action of project.actions" (click)="actionHandler(action)">{{ action.label }}</button>
+    <div class="modal-right">
+      <button class="close-button" (click)="close()">✖</button>
+      <img src="./../../../assets/svg/joinPoject.svg" alt="" />
+      <div class="next-button-container">
+        <button class="next-button">Next project</button>
     </div>
-
-    <button (click)="close()">Close</button>
+    
+    </div>
   </div>
 </div>

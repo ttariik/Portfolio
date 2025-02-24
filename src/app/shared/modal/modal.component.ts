@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
+
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SvgIconComponent],
 
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
@@ -24,6 +26,14 @@ export class ModalComponent {
       `
       },
   ];
+
+  joinIcons: { name: string; label: string }[] = [
+    { name: 'html-green-icon', label: 'HTML' },
+    { name: 'css-green-icon', label: 'CSS' },
+    { name: 'javascript-green-icon', label: 'JavaScript' },
+    { name: 'firebase-green-icon', label: 'Firebase' }
+  ];
+  
 
   actionHandler(action: any) {}
 
