@@ -9,7 +9,16 @@ section {
 
 h3{
 margin: 0 400px 0 0;
-font-family: 'Fira Code';
+font-family: 'Karla';
+font-weight: 700;
+font-size: 25px;
+line-height: 28.8px;
+letter-spacing: 0%;
+}
+
+h2{
+margin: 0 400px 0 0;
+font-family: 'Karla';
 font-weight: 700;
 font-size: 25px;
 line-height: 28.8px;
@@ -19,6 +28,11 @@ letter-spacing: 0%;
 .projects{
   width: 900px;
   height: 400px;
+}
+
+.project-explaination{
+  font-family: 'Karla';
+  font-weight: 400;
 }
 
 .separator {

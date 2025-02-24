@@ -57,18 +57,31 @@ p {
 }
 
 .close-button {
-  align-self: flex-start;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  all: unset;
+  align-self: flex-end;
+  margin: 0 1rem 0 0;
+  width: 18px;
+  height: 18px;
+  background: url("./../../../assets/svg/close_small.svg") no-repeat center;
+  background-size: contain;
   cursor: pointer;
-  font-size: 1.1rem;
-  transition: background-color 0.3s;
+  position: relative;
 
-  &:hover {
-    background-color: #0056b3;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    background: url("./../../../assets/svg/close.svg") no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::after {
+    transform: translate(-50%, -50%) scale(1.5);
   }
 }
 
@@ -122,15 +135,6 @@ img {
   flex-direction: column;
   align-items: flex-end;
   padding: 20px;
-}
-
-.close-button {
-  align-self: flex-end;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: white;
 }
 
 .icon-container {
@@ -224,7 +228,7 @@ app-svg-icon {
   border: none;
   font-size: 1.1rem;
   font-family: "Karla";
-  margin: 2rem 5rem 0 0;
+  margin: 4rem 5rem 0 0;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-flex;

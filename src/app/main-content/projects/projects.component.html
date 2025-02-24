@@ -1,97 +1,42 @@
+<!-- projects.component.html -->
 <section>
-  <!-- <div class="projects">
+  <div class="projects">
     <div class="title">
       <h3>Portfolio</h3>
       <h2>Featured Projects</h2>
     </div>
     <p class="project-explaination">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-      doloribus itaque, suscipit sint porro nihil magnam temporibus sunt
-      dignissimos dolorem quidem natus, cupiditate, quia nesciunt? Labore odio
-      consequuntur ipsum odit.
-    </p> -->
+      Explore a selection of my work here - interact with projects to see my skills in action.
+    </p>
 
-  
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
- 
-
-    <div class="projects" style="margin-top: 300px;"> 
- <div class="separator"></div>
-    <div *ngIf="projects.length > 0">
-      <div class="project-container-join" (click)="openModal(projects[0])">  
-        <header class="project-header-join">
-          <h3 class="project-join">{{ projects[0].name }}</h3>
-          <div>
-            <p *ngFor="let tech of projects[0].technologies">{{ tech }}</p>
-          </div>
-          <app-modal *ngIf="selectedProject" [project]="selectedProject" (closeModal)="closeModal()"></app-modal>
-
-        </header>
-        <ng-container *ngComponentOutlet="projects[0].component"></ng-container>
-      </div>
+    <div class="projects">
       <div class="separator"></div>
+    
 
-      <app-modal  *ngIf="selectedProject" [project]="selectedProject" (closeModal)="closeModal()" ></app-modal>
+      <div *ngFor="let project of projects; let i = index">
+        <div class="project-container" (click)="openModal(project, i)">
+          <header class="project-header">
+            <h3 class="project-name">{{ project.name }}</h3>
+            <div>
+              <p *ngFor="let tech of project.technologies">{{ tech }}</p>
+            </div>
+          </header>
+          <ng-container *ngComponentOutlet="project.component"></ng-container>
+        </div>
+        <div class="separator"></div>
+      </div>
 
-
-
-      <!-- <div class="project-container">
-        <header class="project-header">
-          <h3 class="project-name">{{ projects[1].name }}</h3>
-          <div>
-            <p *ngFor="let tech of projects[1].technologies">{{ tech }}</p>
-          </div>
-        </header>
-        <ng-container *ngComponentOutlet="projects[1].component"></ng-container>
-      </div> -->
+     
+      <app-modal
+        *ngIf="selectedProject"
+        [project]="selectedProject"
+        [projectIndex]="selectedProjectIndex"
+        (nextProjectEvent)="nextProject()"
+        (closeModalEvent)="closeModal()"
+      ></app-modal>
     </div>
-    
   </div>
-
-    
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    
-
-  
-    
-    
-    
-  <!-- </div> -->
 </section>
+
+
+

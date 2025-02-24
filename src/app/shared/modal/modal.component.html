@@ -1,31 +1,45 @@
 <div class="modal-overlay" (click)="onOverlayClick($event)">
   <div class="modal-content" (click)="stopPropagation($event)">
     <div class="modal-left">
-      <h3>{{ projectIndex + 1 | number : "2.0" }}</h3>
+      <h3>{{ projectIndex + 1 | number : '2.0' }}</h3>
       <h2 class="project-name">{{ project.name }}</h2>
-      <div *ngFor="let project of joinDescription">
-        <h2 class="title">{{ project.title }}</h2>
-        <p class="description">{{ project.description }}</p>
+     
+      <div *ngFor="let description of project.description">
+        <h2 class="title">{{ description.title }}</h2>
+        <p class="description">{{ description.text }}</p>
       </div>
+      
       <div class="additional-content">
-        <div *ngFor="let icon of joinIcons" class="icon-container">
+
+        <div *ngFor="let icon of project.technologies" class="icon-container">
           <app-svg-icon [iconName]="icon.name"></app-svg-icon>
           <span class="icon-label">{{ icon.label }}</span>
         </div>
+        
         <div class="project-actions">
-          <button class="github-button">GitHub</button>
-          <button class="live-test-button">Live Test</button>
+          <a [href]="project.github" target="_blank">
+            <button class="github-button">GitHub</button>
+          </a>
+          <a [href]="project.live" target="_blank">
+            <button class="live-test-button">Live Test</button>
+          </a>
         </div>
       </div>
     </div>
+<!-- modal.component.html -->
+<button class="next-button" (click)="nextProject()">Next project</button>
 
     <div class="modal-right">
-      <button class="close-button" (click)="close()">✖</button>
-      <img src="./../../../assets/svg/joinPoject.svg" alt="" />
+      <button class="close-button" (click)="close()"></button>
+      
+
+      <img [src]="project.image" alt="{{ project.name }} image" />
+      
       <div class="next-button-container">
-        <button class="next-button">Next project</button>
-    </div>
-    
+        <button class="next-button" (click)="nextProject()">Next project</button>
+      </div>
     </div>
   </div>
 </div>
+
+
