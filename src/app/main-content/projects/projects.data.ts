@@ -4,7 +4,14 @@ import { ElPolloLocoComponent } from './el-pollo-loco/el-pollo-loco.component';
 export const PROJECTS = [
   {
     name: 'Join',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+    technologies: [
+      { name: 'html-green-icon', label: 'HTML' },
+      { name: 'css-green-icon', label: 'CSS' },
+   
+      { name: 'javascript-green-icon', label: 'JavaScript' },
+      { name: 'firebase-green-icon', label: 'Firebase' },
+     
+    ],
     component: JoinComponent,
     description: [
       { title: 'What is this project about?', text: 'A task manager inspired by the Kanban system...' },
@@ -12,11 +19,15 @@ export const PROJECTS = [
     ],
     github: 'https://github.com/yourusername/join',
     live: 'https://yourprojectliveurl.com',
-    image: './../../../assets/images/joinProject.svg' 
+    image: './../../../assets/svg/joinPoject.svg' 
   },
   {
     name: 'El Pollo Loco',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
+    technologies: [
+      { name: 'html-green-icon', label: 'HTML' },
+      { name: 'css-green-icon', label: 'CSS' },
+      { name: 'javascript-green-icon', label: 'JavaScript' }
+    ],
     component: ElPolloLocoComponent,
     description: [
       { title: 'What is this project about?', text: 'A fun jump-and-run game...' },
@@ -24,7 +35,7 @@ export const PROJECTS = [
     ],
     github: 'https://github.com/yourusername/el-pollo-loco',
     live: 'https://yourprojectliveurl.com/el-pollo-loco',
-    image: './../../../assets/images/elPolloLocoProject.svg'  
+    image: './../../../assets/svg/elPolloLoco-Project.svg'  
   }
 ];
 

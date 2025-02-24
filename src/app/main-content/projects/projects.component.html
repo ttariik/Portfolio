@@ -17,18 +17,12 @@
         <div class="project-container" (click)="openModal(project, i)">
           <header class="project-header">
             <h3 class="project-name">{{ project.name }}</h3>
-            <div>
-              <p *ngFor="let tech of project.technologies">{{ tech }}</p>
-            </div>
           </header>
           <ng-container *ngComponentOutlet="project.component"></ng-container>
         </div>
         <div class="separator"></div>
       </div>
 
-  
-<div></div>
-     
       <app-modal
         *ngIf="selectedProject"
         [project]="selectedProject"

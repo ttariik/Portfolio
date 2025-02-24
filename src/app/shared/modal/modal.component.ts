@@ -15,7 +15,6 @@ export class ModalComponent {
   @Output() nextProjectEvent = new EventEmitter<void>();  
   @Output() closeModalEvent = new EventEmitter<void>(); 
 
-
   stopPropagation(event: MouseEvent): void {
     event.stopPropagation();
   }
