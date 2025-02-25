@@ -1,50 +1,26 @@
 <section>
-
-  
   <div>
     <div>
-      <h3>Who I Am</h3>
+      <h3>{{ title }}</h3>
     </div>
 
     <div class="about-me-container">
-      <h2>About Me</h2>
+      <h2>{{ subtitle }}</h2>
       <div>
-        <p class="text">
-          Hey there, I'm Tarik! My passion for coding stems from my enthusiasm
-          for logical thinking and creative problem-solving. I am particularly
-          fascinated by the intersection of development and security because I
-          want to not only build software but also protect it from attacks.
-        </p>
+        <p class="text">{{ skillSetText }}</p>
         <div class="explanation">
           <div>
-            <a href="https://maps.app.goo.gl/58XEsDJ63HHtVyVx8">
-              <app-svg-icon iconName="location-icon"></app-svg-icon>
-            </a>
 
-            <p>
-              I'm currently based in Frankfurt am Main but fully open to
-              remote opportunities.
-            </p>
+            <p>{{ anotherSkill }}</p>
           </div>
 
           <div>
-            <app-svg-icon iconName="cognition-icon"></app-svg-icon>
-            <p>
-              Tech is always evolving, and I adapt with it. Learning new
-              skills and improving every day is what keeps me motivated.
-            </p>
+
+            <p>{{ anotherSkillsub }}</p>
           </div>
 
           <div>
-            <app-svg-icon iconName="new-release-icon"></app-svg-icon>
-            <p>
-              My problem-solving approach is based on analytical thinking,
-              creativity, and persistence. I break down challenges into
-              manageable parts, explore multiple solutions, and focus on
-              finding the most efficient and elegant one. I also value
-              collaboration, as working with others often leads to better
-              insights and ideas.
-            </p>
+            <button>Let's talk</button>
           </div>
         </div>
       </div>
@@ -52,23 +28,34 @@
   </div>
 
   <div class="technologies">
+    <app-svg-icon iconName="html-icon" tooltip="HTML5"></app-svg-icon>
+    <app-svg-icon iconName="css-icon" tooltip="CSS3"></app-svg-icon>
+    <app-svg-icon iconName="javascript-icon" tooltip="JavaScript"></app-svg-icon>
+    <app-svg-icon iconName="material-design-icon" tooltip="Material Design"></app-svg-icon>
     
-    <app-svg-icon iconName="html-icon"></app-svg-icon>
-    <app-svg-icon iconName="css-icon"></app-svg-icon>
-    <app-svg-icon iconName="javascript-icon"></app-svg-icon>
-    <app-svg-icon iconName="material-design-icon"></app-svg-icon>
-
-
-    <app-svg-icon iconName="typescript-icon"></app-svg-icon>
-    <app-svg-icon iconName="angular-icon"></app-svg-icon>
-    <app-svg-icon iconName="firebase-icon"></app-svg-icon>
-    <app-svg-icon iconName="git-icon"></app-svg-icon>
-
-
-
-    <app-svg-icon iconName="rest-api-icon"></app-svg-icon>
-    <app-svg-icon iconName="scrum-icon"></app-svg-icon>
-    <app-svg-icon iconName="growth-mindset-icon"></app-svg-icon>
+    <app-svg-icon iconName="typescript-icon" tooltip="TypeScript"></app-svg-icon>
+    <app-svg-icon iconName="angular-icon" tooltip="Angular"></app-svg-icon>
+    <app-svg-icon iconName="firebase-icon" tooltip="Firebase"></app-svg-icon>
+    <app-svg-icon iconName="git-icon" tooltip="GIT"></app-svg-icon>
+  
+    <app-svg-icon iconName="rest-api-icon" tooltip="Rest-API"></app-svg-icon>
+    <app-svg-icon iconName="scrum-icon" tooltip="Scrum"></app-svg-icon>
+  
+    <div class="growth-mindset">
+      <app-svg-icon iconName="growth-mindset-icon"></app-svg-icon>
+      <div class="tooltip2">
+        <app-svg-icon iconName="cyberSecurity-icon"></app-svg-icon>
+        <app-svg-icon iconName="react-icon"></app-svg-icon>
+        <app-svg-icon iconName="vue-js_icon"></app-svg-icon>
+      </div>
+    </div>
+    
+    
+    
 
   </div>
+  
+  
+
+
 </section>

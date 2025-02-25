@@ -7,11 +7,32 @@ section {
   background: url("./../../../assets/svg/skill-set-background.svg") no-repeat center center/cover;
 }
 
+
+.title-text{
+  margin: 0 0 2rem 0;
+}
+
+.title-underline{
+  margin: 0 0 2rem 0;
+  font-family: 'Fira Code';
+}
+
+.title-explaination{
+  font-size: 1.1rem;
+  margin: 0 0 4rem 0;
+  font-family: 'Karla';
+  font-weight: 400;
+  line-height: 28.8px;
+  letter-spacing: 0%;
+  width: 400px;
+}
+
 h3{
 margin: 0 400px 0 0;
 font-family: 'Karla';
 font-weight: 700;
-font-size: 25px;
+font-size: 1.5rem;
+color: #3DCFB6;
 line-height: 28.8px;
 letter-spacing: 0%;
 }
@@ -19,8 +40,10 @@ letter-spacing: 0%;
 h2{
 margin: 0 400px 0 0;
 font-family: 'Karla';
-font-weight: 700;
-font-size: 25px;
+font-weight: 800;
+font-size: 4rem;
+color: #3DCFB6;
+width: 100%;
 line-height: 28.8px;
 letter-spacing: 0%;
 }
@@ -28,6 +51,7 @@ letter-spacing: 0%;
 .projects{
   width: 900px;
   height: 400px;
+  padding: 4rem 0 0 4rem;
 }
 
 .project-explaination{

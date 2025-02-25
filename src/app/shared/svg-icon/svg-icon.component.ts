@@ -9,6 +9,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./svg-icon.component.scss']
 })
 export class SvgIconComponent {
-  @Input() iconName: string = ''; 
-  
+  @Input() iconName: string = '';  
+  @Input() tooltip: string = '';   
 }

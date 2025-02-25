@@ -19,7 +19,7 @@ section {
     max-width: 1100px;
     width: 100%;
     flex-wrap: wrap;
-    gap: 6.5rem; 
+    gap: 6.5rem;
 
     > div:first-child {
       display: flex;
@@ -28,7 +28,7 @@ section {
       position: relative;
       width: clamp(12rem, 30vw, 28rem);
       height: clamp(12rem, 30vw, 28rem);
-      margin-top: -1rem; /* Bild weiter oben positionieren */
+      margin-top: -1rem;
     }
 
     img {
@@ -41,6 +41,7 @@ section {
     svg {
       position: relative;
       z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     > div:last-child {
@@ -61,7 +62,7 @@ section {
   border: 1px solid #3dcfb6;
   border-radius: 20px;
   padding: clamp(0.8rem, 1.5vw, 1.5rem);
-  margin-top: 1rem; 
+  margin-top: 1rem;
 
   h2 {
     font-size: clamp(1.2rem, 3vw, 3.5rem);
@@ -128,72 +129,133 @@ h3 {
   position: relative;
   padding: 10px;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .technologies > app-svg-icon:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px) scale(1.1);  
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3); 
 }
 
 .technologies > app-svg-icon:hover::before {
-  content: attr(iconName);
+  content: attr(tooltip);
   position: absolute;
-  top: -30px;
+  top: -40px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.85);
   color: white;
-  padding: 8px 12px;
+  padding: 10px 15px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: bold;
   white-space: nowrap;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.technologies > app-svg-icon:hover::before {
   opacity: 1;
-}
-
-.technologies > app-svg-icon:nth-child(9),
-.technologies > app-svg-icon:nth-child(10),
-.technologies > app-svg-icon:nth-child(11) {
-  grid-column: span 1;
-}
-
-body {
-  transition: background-color 0.3s ease;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .technologies app-svg-icon[iconName="html-icon"]:hover {
   background-color: #e34f26;
 }
+
 .technologies app-svg-icon[iconName="css-icon"]:hover {
   background-color: #1572b6;
 }
+
 .technologies app-svg-icon[iconName="javascript-icon"]:hover {
   background-color: #f7df1e;
 }
+
 .technologies app-svg-icon[iconName="typescript-icon"]:hover {
   background-color: #3178c6;
 }
+
 .technologies app-svg-icon[iconName="angular-icon"]:hover {
   background-color: #dd0031;
 }
+
 .technologies app-svg-icon[iconName="firebase-icon"]:hover {
   background-color: #ffca28;
 }
+
 .technologies app-svg-icon[iconName="git-icon"]:hover {
   background-color: #f05032;
 }
+
 .technologies app-svg-icon[iconName="rest-api-icon"]:hover {
   background-color: #2c3e50;
 }
-.technologies app-svg-icon[iconName="scrum-icon"]:hover {
-  background-color: #5a9;
+
+
+
+
+
+.technologies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 20px;
 }
-.technologies app-svg-icon[iconName="growth-mindset-icon"]:hover {
-  background-color: #6c757d;
+
+.technologies > app-svg-icon {
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.growth-mindset {
+  grid-column: span 4;
+  text-align: center;
+  position: relative;
+}
+
+.growth-mindset app-svg-icon {
+  display: inline-block;
+  padding: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.growth-mindset app-svg-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.growth-mindset .tooltip2 {
+  display: none;
+  position: absolute;
+  top: -70px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  z-index: 10;
+}
+
+
+.growth-mindset:hover .tooltip2 {
+  display: grid; 
+}
+
+
+.growth-mindset .tooltip2 app-svg-icon {
+  padding: 8px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.growth-mindset .tooltip2 app-svg-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px) scale(1.1);
 }
