@@ -12,8 +12,7 @@ import { CommonModule } from '@angular/common';
 export class SkillSetComponent {
   title = 'Technologies';
   subtitle = 'Skill Set';
-  skillSetText = `I thrive in the dynamic world of front-end development, where creativity meets logic. With hands-on experience in Angular, TypeScript, SCSS, and other modern technologies, I build engaging, responsive, and high-performance web applications. But technology never stands still—neither do I.`;  
-  anotherSkill = "You need another skill?";
+  skillSetText = `I thrive in the dynamic world of front-end development, where creativity meets logic. With hands-on experience in Angular, TypeScript, SCSS, and other modern technologies, I build engaging, responsive, and high-performance web applications. But technology never stands still neither do I.`;  
   anotherSkillsub = 'Feel free to contact me.I look forward to expanding on my previous knowledge.';
 
 }

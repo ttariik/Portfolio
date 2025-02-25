@@ -4,22 +4,21 @@
       <h3>{{ title }}</h3>
     </div>
 
-    <div class="about-me-container">
-      <h2>{{ subtitle }}</h2>
+    <div class="skill-set-container">
+      <h2>{{ subtitle }}</h2> 
       <div>
         <p class="text">{{ skillSetText }}</p>
         <div class="explanation">
-          <div>
 
-            <p>{{ anotherSkill }}</p>
+          <div>
+            <p class="anotherSkill-text"> You need <span class="green-text">another skill?</span></p>
           </div>
 
           <div>
-
-            <p>{{ anotherSkillsub }}</p>
+            <p class="anotherSkillsub-text">{{ anotherSkillsub }}</p>
           </div>
 
-          <div>
+          <div class="btn">
             <button>Let's talk</button>
           </div>
         </div>
@@ -32,30 +31,33 @@
     <app-svg-icon iconName="css-icon" tooltip="CSS3"></app-svg-icon>
     <app-svg-icon iconName="javascript-icon" tooltip="JavaScript"></app-svg-icon>
     <app-svg-icon iconName="material-design-icon" tooltip="Material Design"></app-svg-icon>
-    
+
     <app-svg-icon iconName="typescript-icon" tooltip="TypeScript"></app-svg-icon>
     <app-svg-icon iconName="angular-icon" tooltip="Angular"></app-svg-icon>
     <app-svg-icon iconName="firebase-icon" tooltip="Firebase"></app-svg-icon>
     <app-svg-icon iconName="git-icon" tooltip="GIT"></app-svg-icon>
-  
+
     <app-svg-icon iconName="rest-api-icon" tooltip="Rest-API"></app-svg-icon>
     <app-svg-icon iconName="scrum-icon" tooltip="Scrum"></app-svg-icon>
-  
+
     <div class="growth-mindset">
       <app-svg-icon iconName="growth-mindset-icon"></app-svg-icon>
       <div class="tooltip2">
-        <app-svg-icon iconName="cyberSecurity-icon"></app-svg-icon>
-        <app-svg-icon iconName="react-icon"></app-svg-icon>
-        <app-svg-icon iconName="vue-js_icon"></app-svg-icon>
+        <div class="tooltip-item">
+          <app-svg-icon iconName="cyberSecurity-icon"></app-svg-icon>
+          <p>Cyber Security</p>
+        </div>
+        <div class="tooltip-item">
+          <app-svg-icon iconName="react-icon"></app-svg-icon>
+          <p>React</p>
+        </div>
+        <div class="tooltip-item">
+          <app-svg-icon iconName="vue-js_icon"></app-svg-icon>
+          <p>Vue.js</p>
+        </div>
       </div>
     </div>
-    
-    
-    
 
+    <app-svg-icon iconName="radio-button" style="visibility: hidden; width: 50px; height: 50px;"></app-svg-icon>
   </div>
-  
-  
-
-
 </section>
