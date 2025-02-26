@@ -9,19 +9,36 @@
     </p>
 
     <div>
-      <div class="separator"></div>
-    
+      <div class="separator"></div> 
 
-      <div *ngFor="let project of projects; let i = index">
-        <div class="project-container" (click)="openModal(project, i)">
+      <div *ngFor="let project of projects; let i = index" class="project-wrapper">
+      
+        <div 
+          class="project-preview" 
+          *ngIf="hoveredProject && hoveredIndex === i"
+        >
+          <img [src]="hoveredProject.image" [alt]="hoveredProject.name">
+        </div>
+
+     
+        <div 
+          class="project-container" 
+          (click)="openModal(project, i)"
+          (mouseenter)="onHover(project, i)" 
+          (mouseleave)="onLeave()"
+        >
           <header class="project-header">
             <h3 class="project-name">{{ project.name }}</h3>
           </header>
           <ng-container *ngComponentOutlet="project.component"></ng-container>
         </div>
-        <div class="separator"></div>
+
+        <div *ngIf="i < projects.length - 1" class="separator"></div>
       </div>
 
+      <div class="separator"></div> 
+
+      <div class="separator-fix"></div> 
       <app-modal
         *ngIf="selectedProject"
         [project]="selectedProject"
@@ -32,6 +49,3 @@
     </div>
   </div>
 </section>
-
-
-

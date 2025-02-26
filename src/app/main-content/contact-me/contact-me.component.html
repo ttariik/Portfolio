@@ -1,35 +1,57 @@
 <section>
   <div class="content">
     <div class="contact-text">
-      <h3>Contact Me</h3>
-      <h2>Let's work together</h2>
-      <h4>Got a problem to solve?</h4>
-      <p>
-        Contact me through this form, I am interested in hearing from you,
-        knowing your ideas and contributing to your projects with my work.
-      </p>
-      <p>Need a Frontend developer? <a href="#">Let's talk!</a></p>
+      <h3>{{ contactTexts.title }}</h3>
+      <h2>{{ contactTexts.subtitle }}</h2>
+      <h4>{{ contactTexts.question }}</h4>
+      <p>{{ contactTexts.description }}</p>
+      <p>{{ contactTexts.cta }} <a href="#">Let's talk!</a></p>
     </div>
+
     <div class="contact-form">
       <hr />
-      <h2>What's your name?</h2>
-      <input type="text" placeholder="Your name goes here" [(ngModel)]="name" />
-      <hr />
-      <h2>What's your email?</h2>
-      <input type="email" placeholder="your@email.com" [(ngModel)]="email" />
-      <hr />
-      <h2>How can I help you?</h2>
-      <textarea
-        placeholder="Hello Tarik, I am interested in..."
-        [(ngModel)]="message"
-      ></textarea>
-      <hr />
-      <input type="checkbox" [(ngModel)]="privacyAccepted" />
-      <p>
-        I've read the
-        <a routerLink="/privacy-policy">privacy policy</a>
-        and agree to the processing of my data as outlined.
-      </p>
+
+
+      
+      <ng-container *ngFor="let field of formFields">
+        <h2>{{ field.label }}</h2>
+        <input
+          *ngIf="field.type !== 'textarea'"
+          [type]="field.type"
+          [placeholder]="field.placeholder"
+          [(ngModel)]="formData[field.model]"
+          (blur)="validateField(field.model)"
+          [class.invalid]="errors[field.model]"
+        />
+        <textarea
+          *ngIf="field.type === 'textarea'"
+          [placeholder]="field.placeholder"
+          [(ngModel)]="formData[field.model]"
+          (blur)="validateField(field.model)"
+          [class.invalid]="errors[field.model]"
+        ></textarea>
+        <p class="error-message" *ngIf="errors[field.model]">
+          {{ errors[field.model] }}
+        </p>
+        <hr />
+      </ng-container>
+      
+      
+
+      <div class="checkbox-wrapper-43">
+        <input type="checkbox" id="cbx-43" [(ngModel)]="privacyAccepted">
+        <label for="cbx-43" class="check">
+          <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+          </svg>
+        </label>
+        <p>
+          I've read the <a routerLink="/privacy-policy">privacy policy</a>
+          and agree to the processing of my data as outlined.
+        </p>
+      </div>
+
       <button (click)="sendMessage()">Say Hello :)</button>
     </div>
   </div>

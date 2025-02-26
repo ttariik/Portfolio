@@ -15,8 +15,10 @@ export class ProjectsComponent {
   projects = PROJECTS;
   selectedProject: any = null;
   selectedProjectIndex: number = -1;
+  
+  hoveredProject: any = null;
+  hoveredIndex: number = -1;
 
- 
   openModal(project: any, index: number): void {
     this.selectedProject = project;
     this.selectedProjectIndex = index;  
@@ -32,5 +34,17 @@ export class ProjectsComponent {
     const nextIndex = (currentIndex + 1) % this.projects.length;  
     this.selectedProject = this.projects[nextIndex];
     this.selectedProjectIndex = nextIndex;  
+  }
+
+  onHover(project: any, index: number): void {
+    if (project.image) { // Sicherstellen, dass das Bild existiert
+      this.hoveredProject = project;
+      this.hoveredIndex = index;
+    }
+  }
+
+  onLeave(): void {
+    this.hoveredProject = null;
+    this.hoveredIndex = -1;
   }
 }
