@@ -12,13 +12,13 @@ export const PROJECTS = [
     ],
     component: JoinComponent,
     description: [
-      { title: 'What is this project about?', text: 'A task manager inspired by the Kanban system...' },
-      { title: 'Features', text: 'Drag and drop task management...' },
+      { title: 'What is this project about?', text: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.' },
+      // { title: 'Features', text: 'Drag and drop task management...' },
     ],
     github: 'https://github.com/yourusername/join',
     live: 'https://yourprojectliveurl.com',
     image: './../../../assets/svg/joinPoject.svg' ,
-    previewImage: './../../../assets/svg/joinPoject.svg' 
+    previewImage: './../../../assets/svg/join-project.svg' 
   },
   {
     name: 'El Pollo Loco',
@@ -29,12 +29,12 @@ export const PROJECTS = [
     ],
     component: ElPolloLocoComponent,
     description: [
-      { title: 'What is this project about?', text: 'A fun jump-and-run game...' },
-      { title: 'Features', text: 'Addictive gameplay and multiple levels...' },
+      { title: 'What is this project about?', text: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.' },
+      // { title: 'Features', text: 'Addictive gameplay and multiple levels...' },
     ],
     github: 'https://github.com/yourusername/el-pollo-loco',
     live: 'https://yourprojectliveurl.com/el-pollo-loco',
     image: './../../../assets/svg/elPolloLoco-Project.svg',
-    previewImage: './../../../assets/svg/elPolloLoco-Project.svg' 
+    previewImage: './../../../assets/svg/elPolloLoco.svg' 
   }
 ];
