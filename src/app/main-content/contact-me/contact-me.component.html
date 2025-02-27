@@ -8,45 +8,35 @@
       <p>{{ contactTexts.cta }} <a href="#">Let's talk!</a></p>
     </div>
 
-
-
-
-
     <div class="contact-form">
       <hr />
 
-   
-      
       <ng-container *ngFor="let field of formFields">
-        <h2>{{ field.label }}</h2>
-        <input
-          *ngIf="field.type !== 'textarea'"
-          [type]="field.type"
-          [placeholder]="field.placeholder"
-          [(ngModel)]="formData[field.model]"
-          (blur)="validateField(field.model)"
-          [class.invalid]="errors[field.model]"
-        />
-        <textarea
-          *ngIf="field.type === 'textarea'"
-          [placeholder]="field.placeholder"
-          [(ngModel)]="formData[field.model]"
-          (blur)="validateField(field.model)"
-          [class.invalid]="errors[field.model]"
-        ></textarea>
-        <p class="error-message" *ngIf="errors[field.model]">
-          {{ errors[field.model] }}
-        </p>
+        <h5>{{ field.label }}</h5>
+        <div class="input-wrapper">
+          <input *ngIf="field.type !== 'textarea'" [type]="field.type" [placeholder]="field.placeholder"
+            [(ngModel)]="formData[field.model]"
+            (input)="field.model === 'email' ? clearEmailError(field.model) : validateField(field.model)"
+            (blur)="validateField(field.model)" [class.invalid]="errors[field.model]" />
+
+          <textarea class="large-field" *ngIf="field.type === 'textarea'" [placeholder]="field.placeholder"
+            [(ngModel)]="formData[field.model]" (blur)="validateField(field.model)"
+            [class.invalid]="errors[field.model]"></textarea>
+
+          <span class="error-message" *ngIf="errors[field.model]">
+            {{ errors[field.model] }}
+          </span>
+        </div>
         <hr />
       </ng-container>
-      
-      
 
       <div class="checkbox-wrapper-43">
         <input type="checkbox" id="cbx-43" [(ngModel)]="privacyAccepted">
         <label for="cbx-43" class="check">
           <svg width="18px" height="18px" viewBox="0 0 18 18">
-            <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+            <path
+              d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+            </path>
             <polyline points="1 9 7 14 15 4"></polyline>
           </svg>
         </label>
@@ -56,10 +46,20 @@
         </p>
       </div>
 
-      <button (click)="sendMessage()">Say Hello :)</button>
+      <button (click)="sendMessage()" [disabled]="!isFormValid()">Say Hello :)</button>
     </div>
   </div>
+
+
+  <div class="overlay" [class.visible]="showOverlay">
+    <div class="overlay-content">
+      <h2>Thank you for your message!</h2>
+      <p>I'm happy to hear from you and will get back to you shortly.</p>
+      <button (click)="closeOverlay()">Close</button>
+
+    </div>
+  </div>
+
+
   <app-footer></app-footer>
 </section>
-
-
