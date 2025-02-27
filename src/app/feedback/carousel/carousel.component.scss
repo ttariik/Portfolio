@@ -24,10 +24,10 @@
   border-radius: 2rem;
 
   > p {
-    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    font-size: clamp(0.9rem, 1vw, 1.25rem);
     line-height: clamp(1.2rem, 1.5vw, 1.5rem);
     font-weight: 400;
-    color: rgba(255, 255, 255, 1);
+   color: #ffffff;
   }
 
   > div {
@@ -75,7 +75,7 @@ button {
   background: none;
   border: none;
   font-size: clamp(1.5rem, 1.75vw, 1.75rem);
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .indicators {
@@ -102,11 +102,28 @@ button {
   background-size: clamp(1rem, 1.125vw, 1.125rem) clamp(1rem, 1.125vw, 1.125rem);
   background-position: center;
   background-repeat: no-repeat;
-  transition: 0.5s ease;
-
-  &:hover {
-    background-size: clamp(1.25rem, 1.5vw, 1.5rem) clamp(1.25rem, 1.5vw, 1.5rem);
-    transition: 0.5s ease;
-    cursor: pointer;
-  }
+  transition: transform 0.5s ease, background-size 0.5s ease, color 0.5s ease;
+  cursor: pointer;  
+  z-index: 10;     
 }
+
+.nav-right {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-right svg {
+  transition: fill 0.5s ease;
+  fill: white; 
+}
+
+.nav-right:hover {
+  transform: translateX(5px);
+  color: #3dcfb6; 
+}
+
+.nav-right:hover svg path {
+  fill: #3dcfb6;
+}
+

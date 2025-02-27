@@ -27,15 +27,15 @@ export class FeedbackComponent {
     feedbackList: [
       {
         id: 1,
-        name: '',
-        role: 'Team Partner',
-        comment: ''
+        name: 'I.Karakasidis',
+        role: 'Team Partner Join',
+        comment: 'Working with Tarik has been a great experience. His attention to detail and problem-solving mindset made a significant impact on our project. He is highly reliable, communicates effectively, and always brings innovative ideas to the table. His technical skills and teamwork attitude made collaboration smooth and enjoyable. I truly appreciate his dedication and would be happy to work with him again in the future.'
       },
       {
         id: 2,
-        name: '',
-        role: 'Team Partner',
-        comment: ''
+        name: 'M. Joe-Sedlmaier',
+        role: 'Team Partner Join',
+        comment: 'Tarik is an outstanding programmer with exceptional skills in development and system optimization. His problem-solving mindset, deep technical expertise, and collaborative nature make him a valuable team member. He consistently delivers high-quality results and fosters a positive team dynamic.'
       },
       {
         id: 3,

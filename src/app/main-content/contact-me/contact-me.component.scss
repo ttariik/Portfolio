@@ -326,7 +326,16 @@ app-footer {
   }
 }
 
-
+@keyframes buttonSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .overlay-content {
   font-family: 'Karla';
@@ -508,7 +517,8 @@ app-footer {
     padding: 0.7rem 1.3rem;
     background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
     background-size: 300% 300%;
-    animation: gradientShift 4s ease infinite;
+ 
+    animation: buttonSlideUp 1.5s ease-out forwards 4.5s, gradientShift 4s ease infinite;
     border: none;
     border-radius: 16px;
     color: #fff;
@@ -520,15 +530,19 @@ app-footer {
     overflow: hidden;
     transition: transform 0.2s ease;
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.5);
+    
+
+    opacity: 0;
+    transform: translateY(20px);
 
     &:hover {
       transform: scale(1.1) rotate(2deg);
     }
-
+    
     &:active {
       transform: scale(0.95) rotate(-2deg);
     }
-
+    
     &::before {
       content: "";
       position: absolute;
@@ -541,7 +555,7 @@ app-footer {
       opacity: 0.8;
       animation: glitchTop 2s infinite linear alternate-reverse;
     }
-
+    
     &::after {
       content: "";
       position: absolute;

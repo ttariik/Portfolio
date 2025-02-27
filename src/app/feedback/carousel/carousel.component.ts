@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { SvgIconComponent } from '../../shared/svg-icon/svg-icon.component';
+
 
 interface Feedback {
   id: number;
@@ -11,20 +13,21 @@ interface Feedback {
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SvgIconComponent],
   templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.scss',
+  styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent {
   @Input() feedbackList: Feedback[] = [];
-
   currentIndex = 0;
 
   moveNext(): void {
+    console.log('moveNext aufgerufen');
     this.currentIndex = this.calculateNextIndex();
   }
 
   movePrevious(): void {
+    console.log('movePrevious aufgerufen');
     this.currentIndex = this.calculatePreviousIndex();
   }
 
@@ -35,9 +38,14 @@ export class CarouselComponent {
   }
 
   fetchVisibleFeedback() {
-    return this.feedbackList.filter((_, index) =>
-      this.isVisibleFeedbackIndex(index)
-    );
+    if (!this.feedbackList.length) return [];
+    const prevIndex = this.calculatePreviousIndex();
+    const nextIndex = this.calculateNextIndex();
+    return [
+      this.feedbackList[prevIndex],
+      this.feedbackList[this.currentIndex],
+      this.feedbackList[nextIndex],
+    ];
   }
 
   private calculateNextIndex(): number {
@@ -45,17 +53,6 @@ export class CarouselComponent {
   }
 
   private calculatePreviousIndex(): number {
-    return (
-      (this.currentIndex - 1 + this.feedbackList.length) %
-      this.feedbackList.length
-    );
-  }
-
-  private isVisibleFeedbackIndex(index: number): boolean {
-    const prevIndex = this.calculatePreviousIndex();
-    const nextIndex = this.calculateNextIndex();
-    return (
-      index === prevIndex || index === this.currentIndex || index === nextIndex
-    );
+    return (this.currentIndex - 1 + this.feedbackList.length) % this.feedbackList.length;
   }
 }

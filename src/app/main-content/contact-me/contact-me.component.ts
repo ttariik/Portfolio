@@ -19,7 +19,7 @@ export class ContactMeComponent {
 
   privacyAccepted: boolean = false;
   errors: Record<string, string> = {};
-  showOverlay: boolean = true;
+  showOverlay: boolean = false;
 
   contactTexts = {
     title: 'Contact Me',
