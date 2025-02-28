@@ -1,7 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 .slider {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;               
+  overflow-x: auto;               
+  -webkit-overflow-scrolling: touch; 
 }
 
 .quote-icon {
@@ -10,6 +17,7 @@
   left: clamp(-3rem, -2.875rem, -2.5rem);
   top: clamp(-0.8125rem, -0.75rem, -0.5rem);
 }
+
 
 .review-card {
   display: flex;
@@ -22,31 +30,33 @@
   background-color: rgb(39, 83, 75);
   border: 1px solid rgba(61, 207, 182, 1);
   border-radius: 2rem;
-
-  > p {
-    font-size: clamp(0.9rem, 1vw, 1.25rem);
-    line-height: clamp(1.2rem, 1.5vw, 1.5rem);
-    font-weight: 400;
-   color: #ffffff;
-  }
-
-  > div {
-    width: 100%;
-    gap: clamp(0.5rem, 1vw, 1rem);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: clamp(0.9rem, 1.125vw, 1.125rem);
-    line-height: clamp(1.1rem, 1.375vw, 1.375rem);
-    font-weight: 400;
-    color: rgba(255, 255, 255, 1);
-
-    > div {
-      flex: 1;
-      border-bottom: 1px solid rgba(255, 255, 255, 1);
-    }
-  }
+  position: relative; 
 }
+
+.review-card > p {
+  font-size: clamp(0.9rem, 1vw, 1.25rem);
+  line-height: clamp(1.2rem, 1.5vw, 1.5rem);
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.review-card > div {
+  width: 100%;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: clamp(0.9rem, 1.125vw, 1.125rem);
+  line-height: clamp(1.1rem, 1.375vw, 1.375rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.review-card > div > div {
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
 
 .review-card.active {
   opacity: 1;
@@ -57,11 +67,13 @@
 .review-card.next {
   opacity: 0.7;
   transform: scale(0.8);
-
-  > .quote-icon {
-    visibility: hidden;
-  }
 }
+
+.review-card.previous .quote-icon,
+.review-card.next .quote-icon {
+  visibility: hidden;
+}
+
 
 .navigation-wrapper {
   display: flex;
@@ -71,12 +83,14 @@
   margin-top: clamp(1rem, 1.25vw, 1.25rem);
 }
 
+
 button {
   background: none;
   border: none;
   font-size: clamp(1.5rem, 1.75vw, 1.75rem);
-  cursor: pointer; 
+  cursor: pointer;
 }
+
 
 .indicators {
   display: flex;
@@ -89,11 +103,13 @@ button {
   border-radius: 50%;
   background: #ccc;
   cursor: pointer;
+  margin: 0 0.5rem;
 }
 
 .indicator.active {
   background: rgba(61, 207, 182, 1);
 }
+
 
 .nav-left,
 .nav-right {
@@ -103,27 +119,46 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   transition: transform 0.5s ease, background-size 0.5s ease, color 0.5s ease;
-  cursor: pointer;  
-  z-index: 10;     
-}
-
-.nav-right {
+  cursor: pointer;
+  z-index: 10;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.nav-right svg {
+.nav-right svg,
+.nav-left svg {
   transition: fill 0.5s ease;
-  fill: white; 
+  fill: white;
 }
 
 .nav-right:hover {
   transform: translateX(5px);
-  color: #3dcfb6; 
+  color: #3dcfb6;
 }
 
-.nav-right:hover svg path {
+.nav-left:hover {
+  transform: translateX(-5px);
+  color: #3dcfb6;
+}
+
+.nav-right:hover svg path,
+.nav-left:hover svg path {
   fill: #3dcfb6;
 }
 
+
+@media (max-width: 600px) {
+  .review-card {
+    width: 90%;       
+    padding: 1.5rem;  
+  }
+  
+  .navigation-wrapper {
+    margin-top: 1rem;
+  }
+  
+  button {
+    font-size: 1.5rem;
+  }
+}
