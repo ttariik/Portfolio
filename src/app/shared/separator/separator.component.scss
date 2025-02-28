@@ -13,7 +13,6 @@
   align-items: center;
   gap: 10px;
   width: 2px;
-
   height: 150px;
 }
 
@@ -22,7 +21,7 @@
   background-color: #3dcfb6;
   height: 240px;
   position: relative;
-  top: 390px;
+  top: 350px;
   right: 500px;
 }
 
@@ -32,7 +31,7 @@
   height: 185px;
   position: relative;
   left: 700px;
-  top: 642px;
+  top: 632px;
 }
 
 button {
@@ -87,6 +86,11 @@ app-svg-icon:hover {
   transform: rotate(-90deg);
   transform-origin: left top;
   white-space: nowrap;
+  transition: color 0.2s ease-in-out, filter 0.2s ease-in-out;
+  &:hover {
+    color: #3dcfb6;
+    filter: drop-shadow(0 0 5px #3dcfb6);
+  }
 }
 
 @keyframes moveArrowY {

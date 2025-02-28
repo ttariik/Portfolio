@@ -1,9 +1,11 @@
 section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 20px;
     color: white;
+    margin: 5rem 0 2rem 0;
+
   
     .info-container {
       display: flex;
@@ -28,22 +30,54 @@ section {
       text-align: center;
       font-size: 1.2rem;
       color: #3DCFB6;
+      margin: 0 15rem 1rem 15rem;
+      font-family: 'Karla';
+      font-weight: 400;
+      transition: color 0.5s ease, filter 0.2s ease; 
+      &:hover {
+        color: #3DCFB6;
+        filter: drop-shadow(0 0 5px #3DCFB6);
+      }
     }
+    
   
     .socials {
       display: flex;
       flex-direction: column; 
       gap: 10px; 
-  
-      a {
-        text-decoration: none;
-        color: white;
-        font-size: 1rem;
-  
-        &:hover {
-          color: #3DCFB6;
+    
+      .social-item {
+        position: relative;  
+    
+        a {
+          font-family: 'Karla';
+          text-decoration: none;
+          color: white;
+          font-size: 1rem;
+          padding-left: 30px; 
+    
+          &:hover {
+            color: #3DCFB6;
+            transition: color 0.5s ease;
+            filter: drop-shadow(0 0 5px #3DCFB6);
+          }
+        }
+        
+        app-svg-icon {
+          display: inline-block; 
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-40%) translateX(-25%);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+        }
+
+        &:hover app-svg-icon {
+          opacity: 1;
         }
       }
     }
+    
   }
   

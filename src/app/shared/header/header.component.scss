@@ -19,12 +19,16 @@ section {
 
     .nav-container {
       @include flexbox(flex-start, center, 20px);
-
-      .nav-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+    
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px; 
+    }
+    
+      
 
       a {
         font-family: "FiraCode", sans-serif;
@@ -117,7 +121,7 @@ input.check-toggle-round-flat:checked ~ .on {
 }
 
 input.check-toggle-round-flat + label {
-  padding: 2px;
+  padding: 15px;
   width: 84px;
   height: 28px;
   -webkit-border-radius: 60px;
