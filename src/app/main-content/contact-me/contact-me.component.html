@@ -5,23 +5,24 @@
       <h2>{{ contactTexts.subtitle }}</h2>
       <h4>{{ contactTexts.question }}</h4>
       <p>{{ contactTexts.description }}</p>
-      <p>{{ contactTexts.cta }} <a href="#">Let's talk!</a></p>
+      <p class="contact-link-wrapper">{{ contactTexts.cta }} <a class="contact-link" href="#">Let's talk!</a></p>
     </div>
 
     <div class="contact-form">
       <hr />
 
       <ng-container *ngFor="let field of formFields">
-        <h5>{{ field.label }}</h5>
+        <h6>{{ field.label }}</h6>
         <div class="input-wrapper">
           <input *ngIf="field.type !== 'textarea'" [type]="field.type" [placeholder]="field.placeholder"
             [(ngModel)]="formData[field.model]"
             (input)="field.model === 'email' ? clearEmailError(field.model) : validateField(field.model)"
             (blur)="validateField(field.model)" [class.invalid]="errors[field.model]" />
 
-          <textarea class="large-field" *ngIf="field.type === 'textarea'" [placeholder]="field.placeholder"
-            [(ngModel)]="formData[field.model]" (blur)="validateField(field.model)"
+            <textarea class="large-field" *ngIf="field.type === 'textarea'" [placeholder]="field.placeholder"
+            [(ngModel)]="formData[field.model]" (input)="validateField(field.model)" (blur)="validateField(field.model)"
             [class.invalid]="errors[field.model]"></textarea>
+          
 
           <span class="error-message" *ngIf="errors[field.model]">
             {{ errors[field.model] }}
@@ -42,11 +43,11 @@
           </svg>
         </label>
         <p>
-          I've read the <a routerLink="#privacy-policy">privacy policy</a>
+          I've read the <a class="privacy-policy-link" href="./../../shared/privacy-policy/privacy-policy.component.html">privacy policy</a>
           and agree to the processing of my data as outlined.
         </p>
       </div>
- 
+
       <button (click)="sendMessage()" [disabled]="!isFormValid()">Say Hello :)</button>
     </div>
   </div>
